@@ -5,7 +5,7 @@ RSpec.describe "Users", type: :request do
     it "returns http success and check correct placeholder text." do
       get "/"
       expect(response).to have_http_status(:ok)
-      expect(response.body).to include("Here is a list of users")
+      expect(response.body).to include("Here is a list of users") 
     end
   end
 

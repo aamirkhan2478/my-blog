@@ -5,4 +5,4 @@ RSpec.describe "posts/show.html.erb", type: :view do
     render :template => "posts/show"
     expect(rendered).to match /Here show post by ID/
   end
-end
+end 
