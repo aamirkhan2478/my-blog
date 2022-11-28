@@ -15,6 +15,7 @@
       </div>
     </div>
   </div>
+  <%= link_to "Add New Post", new_user_post_path(user_id: @user.id), class:"btn btn-primary my-3" %>
   <h4>Posts</h4>
   <% if @posts.empty? %>
     <div class="card mb-3 border-danger" style="width: 540px;">
