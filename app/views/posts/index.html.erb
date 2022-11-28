@@ -15,8 +15,8 @@
       </div>
     </div>
   </div>
-  <h4>Recent Posts</h4>
-  <% if @user.most_recent_posts.empty? %>
+  <h4>Posts</h4>
+  <% if @posts.empty? %>
     <div class="card mb-3 border-danger" style="width: 540px;">
       <div class="card-header bg-danger text-white">No Post Found</div>
       <div class="card-body">
@@ -24,7 +24,7 @@
       </div>
     </div>
   <% else %>
-    <% @user.most_recent_posts.each do |post| %>
+    <% @posts.each do |post| %>
       <%= link_to user_post_path(id: post.id), class:'nav-link' do%>
         <div class="card mb-3 border-success" style="width: 540px;">
           <div class="card-header bg-success text-white"><%= post.title %></div>
