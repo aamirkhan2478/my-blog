@@ -1,19 +1,23 @@
-require 'rails_helper'
+require "rails_helper"
 
-RSpec.describe 'Users', type: :request do
-  describe 'GET /index' do
-    it 'returns http success and check correct placeholder text.' do
-      get '/'
+RSpec.describe "Users", type: :request do
+  subject = User.create(name: "John", posts_counter: 30, photo: "https://randomuser.me/api/portraits/men/70.jpg", bio: "Teacher from Poland.")
+
+  before { subject.save }
+
+  describe "GET /index" do
+    it "returns http success and check correct placeholder text." do
+      get "/"
       expect(response).to have_http_status(:ok)
-      expect(response.body).to include('Here is a list of users')
+      expect(response.body).to include("Users")
     end
   end
 
-  describe 'GET /show' do
-    it 'returns http success and check correct placeholder text.' do
-      get '/users/:id'
+  describe "GET /show" do
+    it "returns http success and check correct placeholder text." do
+      get user_path(subject.id)
       expect(response).to have_http_status(:ok)
-      expect(response.body).to include('Here show user by id')
+      expect(response.body).to include(subject.name)
     end
   end
 end
