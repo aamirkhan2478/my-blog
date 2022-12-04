@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+  
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts.includes(:author)
@@ -16,9 +18,9 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.author_id = Current.user.id
+    @post.author_id = current_user.id
     if @post.save
-      redirect_to "/users/#{Current.user.id}/posts"
+      redirect_to user_posts_path(current_user.id)
     else
       render :new
     end
