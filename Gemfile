@@ -50,16 +50,15 @@ gem 'bootsnap', require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem 'capybara'
+  gem 'capybara-screenshot'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
   gem 'rspec-rails'
-  gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
-  gem 'capybara-screenshot' 
 
   # The following gems aids with the nuts and bolts
   # of interacting with the browser.
-  gem 'webdrivers'
 end
 
 group :development do
@@ -75,8 +74,8 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem 'capybara'
-  gem 'selenium-webdriver'
-  gem 'webdrivers'
-  gem 'capybara-screenshot' 
+  # gem 'capybara'
+  # gem 'capybara-screenshot'
+  # gem 'selenium-webdriver'
+  # gem 'webdrivers'
 end
