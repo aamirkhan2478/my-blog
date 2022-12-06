@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
   def new
     @comments = Comment.new
   end
@@ -7,9 +8,9 @@ class CommentsController < ApplicationController
     @current_post = Post.find(params[:post_id])
     @comments = @current_post.comments.new(comment_params)
     @comments.post_id = @current_post.id
-    @comments.author_id = Current.user.id
+    @comments.author_id = current_user.id
     if @comments.save
-      redirect_to "/users/#{@current_post.author.id}/posts/#{@current_post.id}"
+      redirect_to user_post_path(@current_post.author_id, @current_post.id)
     else
       render :new
     end
