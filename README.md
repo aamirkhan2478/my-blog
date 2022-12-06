@@ -167,6 +167,11 @@ Example:
 - GitHub: [@aamirkhan2478](https://github.com/aamirkhan2478)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/aamir-kh)
 
+👤 **Muyiwa Fawole**
+
+- GitHub: [@samlorlah](https://github.com/samlorlah)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/muyiwa-fawole)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
