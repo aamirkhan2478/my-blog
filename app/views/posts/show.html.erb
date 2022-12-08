@@ -27,7 +27,7 @@
     <div class="card-body">
       <p class="card-text"><%= @post.text%></p>
     </div>
-    <div class="card-footer">
+    <div class="card-footer d-flex gap-2">
       <%= form_with model: @like, url: user_post_likes_path(post_id: @post.id) do |f| %>
         <%= f.submit "Like", class:"btn btn-outline-primary", data:{turbo:false} %>
       <% end %>
@@ -44,7 +44,11 @@
   <% else %>
     <ul class="list-group mb-3" style="width: 540px;">
       <% @comments.each do |comment| %>
-        <li class="list-group-item"><%= comment.author.name %>: <%= comment.text%></li>
+        <li class="list-group-item"><%= comment.author.name %> | <%= comment.text%><span> 
+        <% if can? :destroy, comment  %> |  
+        <%= link_to "Delete",user_post_comment_path(user_id:@user.id ,post_id:@post.id, id: comment.id), class:"btn btn-outline-danger", "data-turbo-method": :delete %></span>
+        <% end %>
+        </li>
       <% end %>
     </ul>
   <% end %>
