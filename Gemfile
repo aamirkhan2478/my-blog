@@ -36,6 +36,7 @@ gem 'jbuilder'
 # Use CanCanCan for authorization
 gem 'cancancan'
 
+gem 'devise-jwt'
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
